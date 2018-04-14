@@ -27,9 +27,9 @@
 	
 
 
-  <img src="images/order.by.x.png" width="490"/>
+  <img src="images/order.by.x.png" width= 70% >
   
-  <img src="images/order.by.JCR.name.png" width="490"/>
+  <img src="images/order.by.JCR.name.png" width= 70% >
 	
 	
 ## Contributors
