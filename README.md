@@ -14,8 +14,14 @@
 	install_github("PhDMeiwp/circos.JCR@master", force = TRUE)
 	library(circos.JCR)
 
+## Usage
 
-# Examples
+	circos.JCR(x, JCR.name, col = NULL, transparency = 0.8, 
+				order.by = 0,
+				self.include = FALSE, start.degree = 90, text.size = 0.5,
+				track.height = 0.3, ...)
+  
+## Examples
 	library(circlize)
 	library(circos.JCR)
 	x = c(15, 11, 18, 16, 14, 13, 12, 7,)  # an example of citing data of journal "Nature"

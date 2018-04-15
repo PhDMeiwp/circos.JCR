@@ -2,5 +2,5 @@
 
 export(circos.JCR)
 import(circlize)
-import(graphics)
+import(grDevices)
 import(stats)
