@@ -1,6 +1,6 @@
 Package: circos.JCR
 Title: Circular visualization of Journal Citing/Cited Relationships
-Version: 1.1.0
+Version: 1.1.2
 Authors@R: person("Weiping", "Mei", email = "meiweipingg@163.com", role = c("aut", "cre"))
 Description: circos.JCR is a extension of 'circlize' package for drawing the graph of Journal Citing/Cited Relationships. Graph example is as http://ipscience-help.thomsonreuters.com/incitesLiveJCR/JCRGroup/jcrJournalProfile/jcrJournalProfileEgoNetwork.html .
 Depends: R (>= 3.0.0)

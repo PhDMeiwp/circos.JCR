@@ -23,20 +23,24 @@
 #' @examples
 #'
 #' library(circos.JCR)
+#' # an example of citing data of journal "Nature", the top 20 cited journals data included.
 #' NatureCiting = c(4665, 2719, 1757, 1279, 713, 630, 556, 445, 441, 413,
-#'                  402,  387,  367,  359,  351)
+#'                  402,  387,  367,  359,  351, 337, 323, 316, 314, 312, 292)
+#' # Top 20 cited journals by the parent journal "Nature"
 #' JCR.name =c("Nature", "SCIENCE", "P NATL ACAD SCI USA", "CELL", "PHYS REV LETT",
 #'             "ASTROPHYS J", "J BIOL CHEM", "NAT COMMUN", "NUCLEIC ACIDS RES", "PLOS ONE",
-#'              "NEURON", "J AM CHEM SOC", "J NEUROSCI", "BIOINFORMATICS", "MON NOT R ASTRON.")
+#'              "NEURON", "J AM CHEM SOC", "J NEUROSCI", "BIOINFORMATICS", "MON NOT R ASTRON.",
+#'              "ACTA CRYSTALLOGR D", "NAT METHODS", "MOL CELL", "NAT GENET", "ASTRON ASTROPHYS", "NAT NEUROSCI")
+#' # "Citing data (not exact data)" by the top 20 journals.
 #' Allciting = c(7156,  6564,  12214, 2818, 968,
 #'               19399, 7772, 10489, 6570, 27664,
-#'               2251,  3487, 6329,  1475, 28571)
+#'               2251,  3487, 6329,  1475, 28571,
+#'               501, 600, 1198, 668, 10747, 2460)
 #'
 #' circos.JCR(x.cite = NatureCiting, JCR.name = JCR.name, x.allcite = Allciting, start.degree = 90, order.by = 0, text.size = 0.7)
 #'
 #' @author  Weiping Mei <meiweipingg@163.com>
 #' @seealso \code{\link[circlize]{circos.link}}
-
 
 circos.JCR<-
   function(x.cite, JCR.name, x.allcite,
@@ -93,8 +97,8 @@ circos.JCR<-
     color20 = c("#FF9900", "#FFCC00", "#808080", "#C0C0C0", "#0066CC",
                 "#3399FF", "#660099", "#9966CC", "#990000", "#CC3300",
                 "#339966", "#99CC66", "#646464", "#C0C0C0", "#4B4B4B",
-                "#000000", "#FF6600", "#FF9900", "#003399", "#3366FF", "#000000")
-    color20 = c(color20, color20)
+                "#000000", "#FF6600", "#FF9900", "#003399", "#3366FF", "#000000"
+    )
 
     if (is.null(col)){
       col = color20
@@ -111,7 +115,7 @@ circos.JCR<-
 
     circos.initialize(cell_cycle$JCR.name, xlim = cbind(rep(0, length(x.allcite)), cell_cycle$x.allcite))
 
-    ## track for text only
+## track for text only
     circos.trackPlotRegion(ylim = c(0, 1), panel.fun = function(x, y) {
 
       circos.arrow(CELL_META$xlim[1], CELL_META$xlim[2],
@@ -126,7 +130,7 @@ circos.JCR<-
     },
     bg.border = NA, bg.col = NULL, track.height = 0.3) # track.height for text
 
-    ## end copy1
+## end copy1
 
     circos.trackPlotRegion(ylim = c(0, 1), panel.fun = function(x, y) {
 
@@ -136,12 +140,10 @@ circos.JCR<-
                    border = NA)
 
       if (draw.line == TRUE){
-        message("Hey, there, all 'Note' could be ignored !!!")
-        circos.lines(c(CELL_META$xcenter, CELL_META$xcenter),
-                     c(CELL_META$cell.top.radius, CELL_META$cell.top.radius + uy(0.2,"cm")),
-                     col = color[CELL_META$sector.numeric.index])
-
-      }else{}
+      circos.lines(c(CELL_META$xcenter, CELL_META$xcenter),
+                   c(CELL_META$cell.top.radius, CELL_META$cell.top.radius + uy(0.2,"cm")),
+                   col = color[CELL_META$sector.numeric.index])
+        }else{}
     },
     bg.border = NA, track.height = 0.2)
 
@@ -171,3 +173,6 @@ circos.JCR<-
                   rou = 0.52, ...)
     }
   }
+
+# left panel of graph (-90,90)degree: adj=c(1,0)
+# right panel of graph (90,270)degree: adj= c(0,1)
