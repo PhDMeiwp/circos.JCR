@@ -2,17 +2,23 @@
 
  [![HitCount](http://hits.dwyl.io/PhDMeiwp/circos.JCR.svg)](http://hits.dwyl.io/PhDMeiwp/circos.JCR)
 
+## Authors
 
-## Installation (1.0.1)
+<img src="https://github.com/PhDMeiwp/PhDMeiwp.github.io/blob/hexo/Common_images/Mei_Logo.JPG" width="70"/>
 
-**version 1.0.1** from Github
+Weiping MEI https://PhDMeiwp.github.io
 
+
+Graduate School of Fisheries and Environmental Sciences, Nagasaki University
+
+
+## Installation
+
+Get the development version from github:
 	
 	install.packages("devtools")
-	library(devtools) 
-	
-	install_github("PhDMeiwp/circos.JCR@master", force = TRUE)
-	library(circos.JCR)
+	devtools::install_github("PhDMeiwp/circos.JCR@master", force = TRUE)
+
 
 ## Usage
 
